@@ -25,7 +25,7 @@ import math
 radius = float(input("Enter the radius of the circle: "))
 
 Circumference = 2 * math.pi * radius
-Area = math.pi * radius ** 2
+Area = math.pi * pow(radius, 2)
 
 print(f"The circumference of the circle is: {round(Circumference)}")
 print(f"The area of the circle is: {round(Area)}")
