@@ -9,14 +9,22 @@
 # # elif age >= 100:
 #     # print("You are too old to vote.")
 # else:
-#     print("Your are not eligible to vote.")
+#     print("Your are not eligible to vote.")c
 
 
-response = input("Do you want a food? (Y/N): ")
+# response = input("Do you want a food? (Y/N): ")
 
-if response == "Y":
-    print("Here is your food,")
-elif response == "N":
-    print("Okay, no food for you.")
+# if response == "Y":
+#     print("Here is your food,")
+# elif response == "N":
+#     print("Okay, no food for you.")
+# else:
+#     print("Invalid iinput. Please enter Y or N.")
+
+
+for_sale = False
+
+if for_sale:
+    print("This item is for sale.")
 else:
-    print("Invalid iinput. Please enter Y or N.")
+    print("This item is not for sale.")
