@@ -6,7 +6,7 @@ listener = sr.Recognizer()
 
 # Fungsi buat ngomong
 def talk(text):
-    file = "temp.mp3"
+    file = "temp.mp3"   
     gTTS(text=text, lang='en', tld='co.uk').save(file)
 
     pygame.mixer.init()
@@ -22,6 +22,7 @@ def talk(text):
 def take_command():
     try:
         with sr.Microphone() as source:
+            print("Listening...")
             voice = listener.listen(source)
             return listener.recognize_google(voice).lower()
     except:
@@ -35,19 +36,16 @@ def run_jarvis():
     elif "youtube" in command:
         talk("Opening YouTube")
         webbrowser.open("https://youtube.com")
-    elif "play" in command:
-        song = command.replace("play", "")
-        talk("Playing " + song)
-        pywhatkit.playonyt(song)
     elif "search" in command:
-        query = command.replace("search", "")
+        query = command.replace("search", "")   
         talk("Searching for " + query)
+        print(f"Searching for: {query}")
         pywhatkit.search(query)
     elif "stop" in command or "exit" in command:
         talk("Goodbye!")
         exit()
     elif command != "":
-        talk("bawok tak iki.")
+        talk("Sorry, I can't hear you.")
 
 # Sapaan awal
 talk("Hello, I am Jarvis. How can I help you?")
